@@ -40,7 +40,10 @@ trait ModifiersTrait
      */
     public function aggregate(ModifierInterface ...$modifiers): self
     {
-        return ($this)(new Aggregate(...$modifiers));
+        /** @var Aggregate<TKey, list<mixed>> $modifier */
+        $modifier = new Aggregate(...$modifiers);
+
+        return ($this)($modifier);
     }
 
     /**

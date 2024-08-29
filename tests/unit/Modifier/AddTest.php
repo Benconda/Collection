@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace BenCondaTest\Collection\Modifier;
 
+use BenConda\Collection\ArrayCollection;
 use BenConda\Collection\Collection;
 use PHPUnit\Framework\TestCase;
 
@@ -20,5 +21,7 @@ final class AddTest extends TestCase
             ->reindex();
 
         self::assertSame(range(0, 6), $collection->toArray());
+
+        $test = new ArrayCollection(range(0,10));
     }
 }

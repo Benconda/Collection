@@ -56,6 +56,18 @@ class CoreCollection implements \IteratorAggregate
         return null;
     }
 
+    /**
+     * @return ?TKey
+     */
+    public function firstKey(): mixed
+    {
+        foreach ($this as $key => $item) {
+            return $key;
+        }
+
+        return null;
+    }
+
     public function execute(): void
     {
         foreach ($this as $item) {
